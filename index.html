@@ -42,6 +42,7 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -51,7 +52,7 @@
 
 	</head>
 	<body>
-	<div class="fh5co-loader"></div>
+	<div class="fh5co-loader" ></div>
 	
 	<div id="page">
 	<nav class="fh5co-nav" id="my-navigation" role="navigation">
@@ -193,11 +194,11 @@
 				<div class="col-md-12 col-md-offset-2">
 					<div class="row">
 						<div class="col-md-3 text-center">
-							<span class="fh5co-counter js-counter" id="days-in-kgp" data-from="0" data-to="10" data-speed="10000" data-refresh-interval="2"></span>
+							<span class="fh5co-counter js-counter" id="days-in-kgp" data-from="0" data-to="10" data-speed="2000" data-refresh-interval="2"></span>
 							<span class="fh5co-counter-label">Days In KGP</span>
 						</div>
 						<div class="col-md text-center">
-							<span class="fh5co-counter js-counter" data-from="0" data-to="30" data-speed="10000" data-refresh-interval="2"></span>
+							<span class="fh5co-counter js-counter" data-from="0" data-to="30" data-speed="2000" data-refresh-interval="2"></span>
 							<span class="fh5co-counter-label">Github Repositories</span>
 						</div>
 					</div>
@@ -251,54 +252,9 @@
 		</div>
 	</div><!-- END container-wrap -->
 
-	<div class="container-wrap">
-		<footer id="fh5co-footer" role="contentinfo">
-			<div class="row">
-				<div class="col-md-3 fh5co-widget">
-					<h4>About This Page</h4>
-					<p>This is the page where I post the updates about what I'm doing with explained Documentation</p>
-				</div>
-				<div class="col-md-3 col-md-push-1">
-					<h4>Latest Repositories</h4>
-					<ul class="fh5co-footer-links">
-						<li><a href="https://github.com/Saikat2019/ManageYourApps" target="_blank">An App manager Android App</a></li>
-						<li><a href="https://github.com/Saikat2019/dress_classifier" target="_blank">A dress classifier using Keras</a></li>
-						<li><a href="https://github.com/Saikat2019/lukas-kanade_Opticalflow_toDetectAngleOfMovement" target="_blank">Lukas Kanade Opticalflow</a></li>
-						<li><a href="https://github.com/Saikat2019/EmailAuthenticationFirebase" target="_blank">Email authentication using firebase</a></li>					
-					</ul>
-				</div>
-				<div class="col-md-3 col-md-push-1">
-					<h4>Links</h4>
-					<ul class="fh5co-footer-links">
-						<li><a href="index.html">Home</a></li>					
-						<li><a href="projects.html">Projects</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-3">
-					<h4>Contact Information</h4>
-					<ul class="fh5co-footer-links">
-						<li>Want to tell or suggeest me something ?<br> wanna contact me?</li>
-						<li>Get my contact details <a href="contact.html" style="color: blue;">here</a></li>						
-					</ul>
-				</div>
-
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">					
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
+	<div class="container-wrap " >
+		<footer id="fh5co-footer"  role="contentinfo">
+			
 		</footer>
 	</div><!-- END container-wrap -->
 	</div>
@@ -328,6 +284,9 @@
 	<script src="js/myjs/day_counter.js"></script>
 	<!-- script for navigation bar ,still have to implement drop down for projects -->
 	<script src="js/myjs/nav_bar.js"></script>
+
+	<!-- script for footer -->
+	<script src="js/myjs/footer.js"></script>
 	</body>
 </html>
 

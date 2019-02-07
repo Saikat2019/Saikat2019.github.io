@@ -7,7 +7,8 @@ if (typeof jQuery === "undefined") {
 
 $(document).ready(function(){
 
-    $("nav").append('<div class="container-wrap">\
+var navBar = function(){
+                        document.getElementsByTagName("nav")[0].innerHTML=('<div class="container-wrap">\
     					<div class="top-menu">\
     						<div class="row">\
     							<div class="col-sm-3">\
@@ -20,13 +21,19 @@ $(document).ready(function(){
     							</div>\
     							<div class="col-sm -10 text-right menu-1">\
     								<ul>\
-    									<li class="active">\
+    									<li id="home">\
     										<a href="index.html">Home</a>\
     									</li>\
-    									<li>\
+    									<li class="has-dropdown">\
                                             <a href="projects.html">Projects</a>\
+                                            <ul  class="dropdown">\
+                                                <li><a href="#">OpenCV</a></li>\
+                                                <li><a href="#">ROS</a></li>\
+                                                <li><a href="#">Deep Learning</a></li>\
+                                                <li><a href="#">Android Development</a></li>\
+                                            </ul>\
                                         </li>\
-    									<li>\
+    									<li id="about">\
     										<a href="about.html">About</a>\
     									</li>\
     									<li id="contact">\
@@ -36,6 +43,11 @@ $(document).ready(function(){
     							</div>\
     						</div>\
     					</div>\
-    				</div>');
+    				    </div>');
+                    };
+
+                    navBar();
+
+    
 
 });
