@@ -1,0 +1,14 @@
+.my-title{
+	position: relative;
+	left:64px;
+	width:250px;
+	word-wrap: break-word;
+	text-align: center;
+	padding: 1.5%;
+	margin-top: 15px;
+	font-weight: 600;
+	color: #3b1489;
+	font-size: 24px;
+	border: 5px solid #4a259b;
+	border-radius: 15px;
+}
