@@ -4,6 +4,9 @@ function integrate_github_api() {
         url: "https://api.github.com/users/Saikat2019/repos?per_page=100&type=owner",  //dont forget to put repos?per_page=100
         dataType: "json",                                                       //because in github page there are 30 repos 
         success: function(result) {                                             //listed per page    
+         // copying the
+                    //result which is a json to githubInfos which is a global variable so that i can  use it in 
+                    //other functions also
             for( i in result ) {
                 $("#repos_list").append(
                     "<li><a href='" + result[i].html_url + "' target='_blank'>" +
@@ -71,4 +74,5 @@ function integrate_github_api() {
 
 
 integrate_github_api(); //this function has to be called here, otherwise it will not work
+
 
