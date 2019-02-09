@@ -4,19 +4,62 @@ function integrate_github_api() {
         url: "https://api.github.com/users/Saikat2019/repos?per_page=100&type=owner",  //dont forget to put repos?per_page=100
         dataType: "json",                                                       //because in github page there are 30 repos 
         success: function(result) {                                             //listed per page    
-         // copying the
-                    //result which is a json to githubInfos which is a global variable so that i can  use it in 
-                    //other functions also
             for( i in result ) {
-                $("#repos_list").append(
-                    "<li><a href='" + result[i].html_url + "' target='_blank'>" +
-                    result[i].name + "</a></li>"
-                );
+                var repDescrip = result[i].description;
+                if(repDescrip.search("#ANDROID_DEV#") != -1)
+                {
+                    $("#android_dev_repos_list").append(
+                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
+                        "</a></li>"
+                    );
+                }
+                else if(repDescrip.search("#COMPUTER_VISION#") != -1)
+                {
+                    $("#computer_vision_repos_list").append(
+                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
+                        "</a></li>"
+                    );
+                }
+                else if(repDescrip.search("#DL#") != -1)
+                {
+                    $("#dl_repos_list").append(
+                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
+                        "</a></li>"
+                    );
+                }
+                else if(repDescrip.search("#ROS#") != -1)
+                {
+                    $("#ros_repos_list").append(
+                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
+                        "</a></li>"
+                    );
+                }
+                else if(repDescrip.search("#WEB_DEV#") != -1)
+                {
+                    $("#web_dev_repos_list").append(
+                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
+                        "</a></li>"
+                    );
+                }
+                else if(repDescrip.search("#NULL#") != -1)
+                {
+                }
+                else
+                {
+                    $("#miscellaneous_repos_list").append(
+                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
+                        "</a></li>"
+                    );
+                }
+
+
+                
+                
+                
             }
-            document.getElementById("no-of-repos").setAttribute("data-to",result.length);
-            //alert(typeof result[0].updated_at);
+            //to put no of repositories i have in my gihub acc
+            $("#no-of-repos").attr("data-to",result.length);
             
-            //$("#repos_no").append("Total Repositories: " + result.length);
             var latestUT; //latest update time
             var max = 0;
             var index=0;

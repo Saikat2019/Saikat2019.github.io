@@ -7,7 +7,7 @@ $(document).ready(function(){
 																							<p>This is the page where I post the updates about what I\'m doing with explained Documentation</p>\
 																						</div>\
 																						<div class="col-md-3 col-md-push-1">\
-																							<h4>Latest Repositories</h4>\
+																							<h4>You will like to visit these Repositories</h4>\
 																							<ul class="fh5co-footer-links">\
 																								<li>\
 																									<a href="https://github.com/Saikat2019/ManageYourApps" target="_blank">An App manager Android App</a>\
@@ -43,7 +43,7 @@ $(document).ready(function(){
 																						<div class="col-md-3">\
 																							<h4>Contact Information</h4>\
 																							<ul class="fh5co-footer-links">\
-																								<li>Want to tell or suggeest me something ?<br> wanna contact me?</li>\
+																								<li>Want to tell or suggeest me something ?<br>contact me</li>\
 																								<li>Get my contact details <a href="contact.html" style="color: blue;">here</a></li>\
 																							</ul>\
 																						</div>\
