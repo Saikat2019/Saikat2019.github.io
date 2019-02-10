@@ -51,7 +51,7 @@ body {
 /*to restrict mobile browsers such that cards 
 don't go outside the border */
 @media only screen
-and (min-device-width: 600px){ .card { max-width: 200px; }}
+and (min-device-width: 480px){ .card { max-width: 200px; }}
 
 .wrapper {
   display: grid;
