@@ -48,12 +48,6 @@ body {
   font-smoothing: subpixel-antialiased;
 }
 
-/*to restrict mobile browsers such that cards 
-don't go outside the border */
-@media screen and (max-width: 800px)
-{
- .card { max-width: 200px; }
-}
 
 .wrapper {
   display: grid;
@@ -386,4 +380,11 @@ don't go outside the border */
   -webkit-filter: grayscale(50%) contrast(80%) brightness(1.6);
   filter: grayscale(50%) contrast(80%) brightness(1.6);
   mix-blend-mode: normal;
+}
+
+/*to restrict mobile browsers such that cards 
+don't go outside the border */
+@media screen and (max-width: 800px)
+{
+ .card { max-width: 200px; }
 }
