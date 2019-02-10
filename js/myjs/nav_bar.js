@@ -13,7 +13,7 @@ var navBar = function(){
     						<div class="row">\
     							<div class="col-sm-3">\
     								<div id="fh5co-logo">\
-    									<a href="index.html">Saikat Mondal</a>\
+    									<a href="https://saikat2019.github.io/index.html">Saikat Mondal</a>\
     								</div>\
     							</div>\
     							<div class="col-sm-2">\
