@@ -384,6 +384,8 @@ body {
 
 /*to restrict mobile browsers such that cards 
 don't go outside the border */
+
+
 @media screen and (max-width: 600px)
 {
  .card { max-width: 200px; }
