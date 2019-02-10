@@ -386,5 +386,5 @@ body {
 don't go outside the border */
 @media screen and (max-width: 800px)
 {
- .card { max-width: 300px; }
+ .card { max-width: 200px; }
 }
