@@ -1,3 +1,36 @@
+function draw_card(name,url,description,date_updated,date_created){
+    return '<div style="padding: 10px;margin :12px ;display: inline-block;">\
+        <!-- BEGIN: card -->\
+        <a href='+url+' target="_blank">\
+        <div class="card" data-effect="color">\
+            <button class="card__save  js-save" type="button">\
+              <i class="fa  fa-bookmark"></i>\
+             </button>\
+            <figure  class="card__image">\
+              <img src="'+name+'/imgs/bg.jpg" alt="Short description">\
+            </figure>\
+            <div class="card__header">\
+              <figure class="card__profile">\
+                <img src="'+name+'/imgs/icon.jpg" alt="Short description">\
+              </figure>\
+            </div>\
+            <div class="card__body">\
+              <h3 class="card__name" style:"color:#FFF;">'+name+'</h3>\
+              <p class="card__job">\
+                    <p style="color:#FFF;font-size:12px;"><i class="icon-eye2" ></i>View</p>\
+              </p>\
+              <p class="card__bio">'+description+'</p>\
+            </div>\
+            <div class="card__footer">\
+                <li style="color:#FFF"><p class="card__date">Updated On : '+date_updated+'</p></li>\
+                <li style="color:#FFF"><p class="card__date">Created On : '+date_created+'</p></li>\
+            </div>\
+        </div>\
+        <!-- END: card -->\
+        </a>\
+    </div>';
+}
+
 function integrate_github_api() {
     $.ajax({
         type: "GET",
@@ -8,48 +41,36 @@ function integrate_github_api() {
                 var repDescrip = result[i].description;
                 if(repDescrip.search("#ANDROID_DEV#") != -1)
                 {
-                    $("#android_dev_repos_list").append(
-                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
-                        "</a></li>"
-                    );
+                    $("#android_dev_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#ANDROID_DEV#/g,""),
+                        result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
                 }
                 else if(repDescrip.search("#COMPUTER_VISION#") != -1)
                 {
-                    $("#computer_vision_repos_list").append(
-                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
-                        "</a></li>"
-                    );
+                    $("#computer_vision_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#COMPUTER_VISION#/g,""),
+                        result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
                 }
                 else if(repDescrip.search("#DL#") != -1)
                 {
-                    $("#dl_repos_list").append(
-                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
-                        "</a></li>"
-                    );
+                    $("#dl_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#DL#/g,""),
+                        result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
                 }
                 else if(repDescrip.search("#ROS#") != -1)
                 {
-                    $("#ros_repos_list").append(
-                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
-                        "</a></li>"
-                    );
+                    $("#ros_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#ROS#/g,""),
+                        result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
                 }
                 else if(repDescrip.search("#WEB_DEV#") != -1)
                 {
-                    $("#web_dev_repos_list").append(
-                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
-                        "</a></li>"
-                    );
+                    $("#web_dev_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#WEB_DEV#/g,""),
+                        result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
                 }
                 else if(repDescrip.search("#NULL#") != -1)
                 {
                 }
                 else
                 {
-                    $("#miscellaneous_repos_list").append(
-                        "<li><a href='" + result[i].html_url + "' target='_blank'>" +result[i].name+
-                        "</a></li>"
-                    );
+                    $("#miscellaneous_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#MISCELLANEOUS#/g,""),
+                        result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
                 }
 
 

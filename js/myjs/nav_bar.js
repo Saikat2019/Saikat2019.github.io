@@ -8,7 +8,7 @@ if (typeof jQuery === "undefined") {
 $(document).ready(function(){
 
 var navBar = function(){
-                        document.getElementsByTagName("nav")[0].innerHTML=('<div class="container-wrap">\
+                        $("#my-navigation").append('<div class="container-wrap" style="border-radius: 10px;">\
     					<div class="top-menu">\
     						<div class="row">\
     							<div class="col-sm-3">\
@@ -17,15 +17,15 @@ var navBar = function(){
     								</div>\
     							</div>\
     							<div class="col-sm-2">\
-    								<img src="images/ghdp.jpg" class="img-circle img-responsive" alt="My Github profile picture" style="width:80px;height:80px;">\
+    								<img src="https://avatars2.githubusercontent.com/u/33754597?v=4" class="img-circle img-responsive" alt="My Github profile picture" style="width:80px;height:80px;">\
     							</div>\
     							<div class="col-sm -10 text-right menu-1">\
     								<ul>\
     									<li id="home">\
-    										<a href="index.html">Home</a>\
+    										<a href="https://saikat2019.github.io/index.html">Home</a>\
     									</li>\
     									<li class="has-dropdown">\
-                                            <a href="projects.html">Projects</a>\
+                                            <a href="https://saikat2019.github.io/projects.html">Projects</a>\
                                             <ul  class="dropdown">\
                                                 <li><a href="#">OpenCV</a></li>\
                                                 <li><a href="#">ROS</a></li>\
@@ -34,10 +34,10 @@ var navBar = function(){
                                             </ul>\
                                         </li>\
     									<li id="about">\
-    										<a href="about.html">About</a>\
+    										<a href="https://saikat2019.github.io/about.html">About</a>\
     									</li>\
     									<li id="contact">\
-    										<a href="contact.html">Contact</a>\
+    										<a href="https://saikat2019.github.io/contact.html">Contact</a>\
     									</li>\
     								</ul>\
     							</div>\
