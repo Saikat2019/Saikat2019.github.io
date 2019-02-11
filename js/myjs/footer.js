@@ -28,16 +28,16 @@ $(document).ready(function(){
 						<h4>Links</h4>\
 						<ul class="fh5co-footer-links">\
 							<li>\
-								<a href="index.html">Home</a>\
+								<a href="https://saikat2019.github.io/index.html">Home</a>\
 							</li>\
 							<li>\
-								<a href="projects.html">Projects</a>\
+								<a href="https://saikat2019.github.io/projects.html">Projects</a>\
 							</li>\
 							<li>\
-								<a href="about.html">About</a>\
+								<a href="https://saikat2019.github.io/about.html">About</a>\
 							</li>\
 							<li>\
-								<a href="contact.html">Contact</a>\
+								<a href="https://saikat2019.github.io/contact.html">Contact</a>\
 							</li>\
 						</ul>\
 					</div>\
