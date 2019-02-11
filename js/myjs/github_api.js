@@ -15,7 +15,7 @@ function draw_card(name,url,description,date_updated,date_created){
               </figure>\
             </div>\
             <div class="card__body">\
-              <h3 class="card__name" style:"color:#FFF;">'+name+'</h3>\
+              <h3 class="card__name adjust_color" style:"color:#FFF;" >'+name+'</h3>\
               <p class="card__job">\
                     <p style="color:#FFF;font-size:12px;"><i class="icon-eye2" ></i>View</p>\
               </p>\
