@@ -39,35 +39,44 @@ function integrate_github_api() {
         success: function(result) {                                             //listed per page    
             for( i in result ) {
                 var repDescrip = result[i].description;
+                var matched_atleast_1 = 0;
+//instead of if-elseif-else, all if s are used because one repo may fall into
+//multiple category               
                 if(repDescrip.search("#ANDROID_DEV#") != -1)
                 {
                     $("#android_dev_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#ANDROID_DEV#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
+                    matched_atleast_1 = 1;
                 }
-                else if(repDescrip.search("#COMPUTER_VISION#") != -1)
+                if(repDescrip.search("#COMPUTER_VISION#") != -1)
                 {
                     $("#computer_vision_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#COMPUTER_VISION#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
+                    matched_atleast_1 = 1;
                 }
-                else if(repDescrip.search("#DL#") != -1)
+                if(repDescrip.search("#DL#") != -1)
                 {
                     $("#dl_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#DL#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
+                    matched_atleast_1 = 1;
                 }
-                else if(repDescrip.search("#ROS#") != -1)
+                if(repDescrip.search("#ROS#") != -1)
                 {
                     $("#ros_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#ROS#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
+                    matched_atleast_1 = 1;
                 }
-                else if(repDescrip.search("#WEB_DEV#") != -1)
+                if(repDescrip.search("#WEB_DEV#") != -1)
                 {
                     $("#web_dev_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#WEB_DEV#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
+                    matched_atleast_1 = 1;
                 }
-                else if(repDescrip.search("#NULL#") != -1)
+                if(repDescrip.search("#NULL#") != -1)
                 {
+                	matched_atleast_1 = 1;
                 }
-                else
+                if(matched_atleast_1 == 0)
                 {
                     $("#miscellaneous_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#MISCELLANEOUS#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
