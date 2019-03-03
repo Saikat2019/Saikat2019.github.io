@@ -36,7 +36,8 @@ function integrate_github_api() {
         type: "GET",
         url: "https://api.github.com/users/Saikat2019/repos?per_page=100&type=owner",  //dont forget to put repos?per_page=100
         dataType: "json",                                                       //because in github page there are 30 repos 
-        success: function(result) {                                             //listed per page    
+        success: function(result) { 
+                                                        //listed per page    
             for( i in result ) {
                 var repDescrip = result[i].description;
                 var matched_atleast_1 = 0;
@@ -83,10 +84,24 @@ function integrate_github_api() {
                 }
 
 
-                
+                // to put latest updated repositories inside index.html
+            $("#current-proj-header").append(result[index].name);
+            $("#current-proj-header, #current-proj-url").attr("href",result[index].html_url);
+
+            // to put latest created repositories inside index.html
+            $("#latest-proj-1-header").append(result[n1].name);
+            $("#latest-proj-1-url").attr("href",result[n1].html_url);
+
+            $("#latest-proj-2-header").append(result[n2].name);
+            $("#latest-proj-2-url").attr("href",result[n2].html_url);
+
+            $("#latest-proj-3-header").append(result[n3].name);
+            $("#latest-proj-3-url").attr("href",result[n3].html_url);
+            
                 
                 
             }
+
             //to put no of repositories i have in my gihub acc
             $("#no-of-repos").attr("data-to",result.length);
             
@@ -127,19 +142,6 @@ function integrate_github_api() {
                 }
             }
             
-            // to put latest updated repositories inside index.html
-            $("#current-proj-header").append(result[index].name);
-            $("#current-proj-header, #current-proj-url").attr("href",result[index].html_url);
-
-            // to put latest created repositories inside index.html
-            $("#latest-proj-1-header").append(result[n1].name);
-            $("#latest-proj-1-url").attr("href",result[n1].html_url);
-
-            $("#latest-proj-2-header").append(result[n2].name);
-            $("#latest-proj-2-url").attr("href",result[n2].html_url);
-
-            $("#latest-proj-3-header").append(result[n3].name);
-            $("#latest-proj-3-url").attr("href",result[n3].html_url);
             
         }
     });
