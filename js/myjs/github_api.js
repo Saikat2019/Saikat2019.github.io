@@ -34,74 +34,50 @@ function draw_card(name,url,description,date_updated,date_created){
 function integrate_github_api() {
     $.ajax({
         type: "GET",
-        url: "https://api.github.com/users/Saikat2019/repos?per_page=100",  //dont forget to put repos?per_page=100
+        url: "https://api.github.com/users/Saikat2019/repos?per_page=100&type=owner",  //dont forget to put repos?per_page=100
         dataType: "json",                                                       //because in github page there are 30 repos 
-        success: function(result) { 
-                                                        //listed per page    
+        success: function(result) {                                             //listed per page    
             for( i in result ) {
                 var repDescrip = result[i].description;
-                var matched_atleast_1 = 0;
-//instead of if-elseif-else, all if s are used because one repo may fall into
-//multiple category               
                 if(repDescrip.search("#ANDROID_DEV#") != -1)
                 {
                     $("#android_dev_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#ANDROID_DEV#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
-                    matched_atleast_1 = 1;
                 }
-                if(repDescrip.search("#COMPUTER_VISION#") != -1)
+                else if(repDescrip.search("#COMPUTER_VISION#") != -1)
                 {
                     $("#computer_vision_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#COMPUTER_VISION#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
-                    matched_atleast_1 = 1;
                 }
-                if(repDescrip.search("#DL#") != -1)
+                else if(repDescrip.search("#DL#") != -1)
                 {
                     $("#dl_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#DL#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
-                    matched_atleast_1 = 1;
                 }
-                if(repDescrip.search("#ROS#") != -1)
+                else if(repDescrip.search("#ROS#") != -1)
                 {
                     $("#ros_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#ROS#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
-                    matched_atleast_1 = 1;
                 }
-                if(repDescrip.search("#WEB_DEV#") != -1)
+                else if(repDescrip.search("#WEB_DEV#") != -1)
                 {
                     $("#web_dev_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#WEB_DEV#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
-                    matched_atleast_1 = 1;
                 }
-                if(repDescrip.search("#NULL#") != -1)
+                else if(repDescrip.search("#NULL#") != -1)
                 {
-                	matched_atleast_1 = 1;
                 }
-                if(matched_atleast_1 == 0)
+                else
                 {
                     $("#miscellaneous_repos_card_list").append(draw_card(result[i].name,result[i].html_url,result[i].description.replace(/#MISCELLANEOUS#/g,""),
                         result[i].updated_at.substring(0,10),result[i].created_at.substring(0,10)));
                 }
 
 
-                // to put latest updated repositories inside index.html
-            $("#current-proj-header").append(result[index].name);
-            $("#current-proj-header, #current-proj-url").attr("href",result[index].html_url);
-
-            // to put latest created repositories inside index.html
-            $("#latest-proj-1-header").append(result[n1].name);
-            $("#latest-proj-1-url").attr("href",result[n1].html_url);
-
-            $("#latest-proj-2-header").append(result[n2].name);
-            $("#latest-proj-2-url").attr("href",result[n2].html_url);
-
-            $("#latest-proj-3-header").append(result[n3].name);
-            $("#latest-proj-3-url").attr("href",result[n3].html_url);
-            
+                
                 
                 
             }
-
             //to put no of repositories i have in my gihub acc
             $("#no-of-repos").attr("data-to",result.length);
             
@@ -142,6 +118,19 @@ function integrate_github_api() {
                 }
             }
             
+            // to put latest updated repositories inside index.html
+            $("#current-proj-header").append(result[index].name);
+            $("#current-proj-header, #current-proj-url").attr("href",result[index].html_url);
+
+            // to put latest created repositories inside index.html
+            $("#latest-proj-1-header").append(result[n1].name);
+            $("#latest-proj-1-url").attr("href",result[n1].html_url);
+
+            $("#latest-proj-2-header").append(result[n2].name);
+            $("#latest-proj-2-url").attr("href",result[n2].html_url);
+
+            $("#latest-proj-3-header").append(result[n3].name);
+            $("#latest-proj-3-url").attr("href",result[n3].html_url);
             
         }
     });
@@ -149,5 +138,4 @@ function integrate_github_api() {
 
 
 integrate_github_api(); //this function has to be called here, otherwise it will not work
-
 
