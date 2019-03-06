@@ -34,7 +34,7 @@ function draw_card(name,url,description,date_updated,date_created){
 function integrate_github_api() {
     $.ajax({
         type: "GET",
-        url: "https://api.github.com/users/Saikat2019/repos?per_page=100&type=owner",  //dont forget to put repos?per_page=100
+        url: "https://api.github.com/users/Saikat2019/repos?per_page=100",  //dont forget to put repos?per_page=100
         dataType: "json",                                                       //because in github page there are 30 repos 
         success: function(result) { 
                                                         //listed per page    
